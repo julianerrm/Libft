@@ -6,20 +6,13 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 11:30:28 by julrodri          #+#    #+#             */
-/*   Updated: 2021/08/28 11:17:49 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/02 22:56:39 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	char	a;
-
-	a = 32;
-	while (a <= 126)
-	{
-		if (c == a)
-			return (1);
-		a++;
-	}
+	if (c >= 32 && c <= 126)
+		return (1);
 	return (0);
 }

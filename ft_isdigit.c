@@ -6,20 +6,13 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 11:30:28 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 00:08:56 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/02 22:57:06 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	int	a;
-
-	a = 0;
-	while (a <= 9)
-	{
-		if (c == a)
-			return (1);
-		a++;
-	}
+	if (c >= 0 && c <= 9)
+		return (1);
 	return (0);
 }

@@ -6,20 +6,13 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 11:30:28 by julrodri          #+#    #+#             */
-/*   Updated: 2021/08/28 11:18:08 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/02 22:56:49 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	char	a;
-
-	a = 'a';
-	while (a <= 'z')
-	{
-		if (c == a || c == a - 32)
-			return (1);
-		a++;
-	}
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') )
+		return (1);
 	return (0);
 }

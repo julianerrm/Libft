@@ -6,20 +6,13 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 11:30:28 by julrodri          #+#    #+#             */
-/*   Updated: 2021/08/28 11:15:36 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/02 22:52:43 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	char	a;
-
-	a = 0;
-	while (a <= 255)
-	{
-		if (c == a)
-			return (1);
-		a++;
-	}
+	if (c >= 0 && c <= 127)
+		return (1);
 	return (0);
 }

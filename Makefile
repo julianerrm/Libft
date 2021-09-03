@@ -6,47 +6,53 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/08/25 23:16:47 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/02 22:42:55 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIB = libft.a
+NAME = libft.a
 FLAGS = -Wall -Werror -Wextra
-OBJS = ft_isalpha.c\
-ft_isdigit.c\
-ft_isalnum.c\
-ft_isascii.c\
-ft_isprint.c\
-ft_strlen.c\
-ft_memset.c\
-ft_bzero.c\
-ft_memcpy.c\
-ft_memmove.c\
-ft_strlcpy.c\
-ft_strlcat.c\
-ft_toupper.c\
-ft_tolower.c\
-ft_strchr.c\
-ft_strrchr.c\
-ft_strncmp.c\
-ft_memchr.c\
-ft_memcmp.c\
-ft_strnstr.c\
-ft_atoi.c
+SRC = ft_isalpha.c \
+ft_isdigit.c \
+ft_isalnum.c \
+ft_isascii.c \
+ft_isprint.c \
+ft_strlen.c \
+ft_memset.c \
+ft_bzero.c \
+ft_memcpy.c \
+ft_memmove.c \
+ft_strlcpy.c \
+ft_strlcat.c \
+ft_toupper.c \
+ft_tolower.c \
+ft_strchr.c \
+ft_strrchr.c \
+ft_strncmp.c \
+ft_memchr.c \
+ft_strnstr.c \
+ft_atoi.c \
+ft_strdup.c \
+ft_split.c \
+ft_substr.c
 
+OBJ = ${SRC:%.c=%.o} 
 
-all:
-	gcc $(FLAGS) -c $(OBJS)
-	ar -rcs $(LIB) $(OBJS)
+all: ${NAME}
 
+${NAME}:${OBJ}
+	ar -crs ${NAME} ${OBJ}
+
+${OBJ}:
+	gcc ${FLAGS} -c ${SRC}
 
 clean:
-	rm -rf $(OBJS)
+	rm -f ${OBJ}
 
 fclean: 
-	rm -rf $(LIB) $(OBJS)
+	rm -f ${NAME}
 
-re: fclean all
+re: clean all
 
 # $(NAME), all, clean, fclean and
 # re.

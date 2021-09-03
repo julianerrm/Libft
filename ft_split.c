@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 11:34:00 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 17:22:56 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/02 23:09:10 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	ft_splitcounter(char const *s, char c)
 {
 	int		count;
-	int		i;
+	size_t	i;
 
 	i = 1;
 	count = 0;
@@ -38,7 +38,7 @@ char    **ft_split(char const *s, char c)
 	count = ft_splitcounter(s, c);
 	r = (char **) malloc((count + 1) * sizeof(void *));
 	r[count] = NULL;
-	if (r == NULL);
+	if (r == NULL)
 		return (NULL);
 	int_s = (char *) s;
 	if (int_s[ft_strlen(s) - 1] == c)
@@ -49,7 +49,7 @@ char    **ft_split(char const *s, char c)
 		int_s[s - r[count] - 1] = '\0';
 		count --;
 	}	
-	if (int_s[0] = c)
+	if (int_s[0] == c)
 		r[count] = int_s + 1;
 	else 
 		r[count] = int_s;
