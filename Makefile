@@ -6,7 +6,7 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/09/02 22:42:55 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/06 10:49:32 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,10 @@ fclean:
 	rm -f ${NAME}
 
 re: clean all
+
+so:
+	gcc -nostartfiles -fPIC $(FLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 # $(NAME), all, clean, fclean and
 # re.

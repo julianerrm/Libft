@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 14:52:38 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 19:48:24 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/06 13:06:19 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	ft_algtchr(int n)
 {
 	if (n < 10)
 		return (n + 48);
-	if (n > 9)
+	else
 		return (ft_algtchr(n % 10));
 }
 
@@ -49,8 +49,8 @@ char	*ft_itoa(int n)
 	n_temp = n * (1 - ft_negative(n) * 2);
 	alg = ft_alg(n_temp);
 	r = (char *) malloc((ft_negative(n) + alg + 1) * sizeof(char));
-	if (r == NULL)
-		return (NULL);
+	if (!r)
+		return (0);
 	if (ft_negative(n))
 		r[0] = '-';
 	r[ft_negative(n) + alg] = '\0';

@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 17:39:52 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 23:11:32 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/06 12:25:52 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	int	r;
+	int		r;
 
 	if (n == 0)
 		return (0);

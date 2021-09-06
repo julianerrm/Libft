@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 11:34:00 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 23:09:10 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/06 13:19:22 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ static int	ft_splitcounter(char const *s, char c)
 	{
 		if (s[i] == c)
 			count ++;
-		i++;	
+		i++;
 	}
 	return (count + 1);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**r;
 	char	*int_s;
@@ -37,9 +37,9 @@ char    **ft_split(char const *s, char c)
 
 	count = ft_splitcounter(s, c);
 	r = (char **) malloc((count + 1) * sizeof(void *));
-	r[count] = NULL;
-	if (r == NULL)
-		return (NULL);
+	r[count] = '\0';
+	if (!r || !s || !c)
+		return (0);
 	int_s = (char *) s;
 	if (int_s[ft_strlen(s) - 1] == c)
 		int_s[ft_strlen(s) - 1] = '\0';
@@ -51,13 +51,14 @@ char    **ft_split(char const *s, char c)
 	}	
 	if (int_s[0] == c)
 		r[count] = int_s + 1;
-	else 
+	else
 		r[count] = int_s;
 	return (r);
 }
 
-#include <stdio.h>
-int main(void)
-{
-	printf("%s\n%s\n%s\n", ft_split("oiatudoabom", 'a')[0], ft_split("oiatudoabom", 'a')[1], ft_split("oiatudoabom", 'a')[2]);
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	printf("%s\n%s\n%s\n", ft_split("oiatudoabom", 'a')[0], 
+//ft_split("oiatudoabom", 'a')[1], ft_split("oiatudoabom", 'a')[2]);
+// }
