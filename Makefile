@@ -6,7 +6,7 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/09/06 10:49:32 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/07 11:39:42 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,22 @@ ft_strnstr.c \
 ft_atoi.c \
 ft_strdup.c \
 ft_split.c \
-ft_substr.c
+ft_substr.c \
+ft_calloc.c \
+ft_strdup.c \
+ft_substr.c \
+ft_strjoin.c \
+ft_strtrim.c \
+ft_split.c \
+ft_itoa.c \
+ft_strmapi.c \
+ft_striteri.c \
+ft_putchar_fd.c \
+ft_putstr_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c
 
-OBJ = ${SRC:%.c=%.o} 
+OBJ = ${SRC:%.c = %.o} 
 
 all: ${NAME}
 

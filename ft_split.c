@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 11:34:00 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/06 13:19:22 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 11:10:32 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,8 @@ char	**ft_split(char const *s, char c)
 	return (r);
 }
 
-// #include <stdio.h>
-// int main(void)
-// {
-// 	printf("%s\n%s\n%s\n", ft_split("oiatudoabom", 'a')[0], 
-//ft_split("oiatudoabom", 'a')[1], ft_split("oiatudoabom", 'a')[2]);
-// }
+#include <stdio.h>
+int main(void)
+{
+	printf("%s\n%s\n%s\n", ft_split("oiatudoabom", 'a')[0], ft_split("oiatudoabom", 'a')[1], ft_split("oiatudoabom", 'a')[2]);
+}
