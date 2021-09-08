@@ -6,7 +6,7 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/09/07 11:39:42 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/07 23:17:20 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,9 @@ ft_strncmp.c \
 ft_memchr.c \
 ft_strnstr.c \
 ft_atoi.c \
-ft_strdup.c \
-ft_split.c \
 ft_substr.c \
 ft_calloc.c \
 ft_strdup.c \
-ft_substr.c \
 ft_strjoin.c \
 ft_strtrim.c \
 ft_split.c \
@@ -49,7 +46,7 @@ ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c
 
-OBJ = ${SRC:%.c = %.o} 
+OBJ = ${SRC:%.c=%.o} 
 
 all: ${NAME}
 
@@ -57,7 +54,7 @@ ${NAME}:${OBJ}
 	ar -crs ${NAME} ${OBJ}
 
 ${OBJ}:
-	gcc ${FLAGS} -c ${SRC}
+	clang ${FLAGS} -c ${SRC}
 
 clean:
 	rm -f ${OBJ}
@@ -68,8 +65,8 @@ fclean:
 re: clean all
 
 so:
-	gcc -nostartfiles -fPIC $(FLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	clang -nostartfiles -fPIC $(FLAGS) $(SRC)
+	clang -nostartfiles -shared -o libft.so $(OBJ)
 
 # $(NAME), all, clean, fclean and
 # re.

@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 11:37:13 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/06 13:17:45 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 23:06:39 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*r;
-	int		i;
+	size_t	i;
 
-	r = s1;
+	r = (char *) s1;
 	i = 0;
-	if (!s || !set)
+	if (!s1 || !set)
 		return (0);
 	while (set[i] == '\0' && s1[i] == set[i])
 		i++;
 	if (i == ft_strlen(set))
-		r = s1 + i;
+		r = (char *)(s1 + i);
 	i = ft_strlen(r) - ft_strlen(set);
 	while (set[i] == '\0' && r[i] == set[i])
 		i++;

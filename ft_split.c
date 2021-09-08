@@ -6,12 +6,11 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 11:34:00 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/07 11:10:32 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 23:18:24 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	ft_splitcounter(char const *s, char c)
 {
@@ -37,7 +36,7 @@ char	**ft_split(char const *s, char c)
 
 	count = ft_splitcounter(s, c);
 	r = (char **) malloc((count + 1) * sizeof(void *));
-	r[count] = '\0';
+	r[count] = 0;
 	if (!r || !s || !c)
 		return (0);
 	int_s = (char *) s;

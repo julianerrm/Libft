@@ -6,24 +6,19 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 22:54:02 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/01 23:41:57 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 22:46:28 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*temp;
-	int		i;
+	char	*r;
 
-	i = 0;
-	if (nmemb == 0 || size == 0)
+	r = malloc((nmemb * size) * sizeof(char));
+	if (!r)
 		return (0);
-	while (i < nmemb)
-	{
-		&temp[i] = malloc(size);
-		i++;
-	}
-	return (temp);
+	ft_memset(r, 0, (nmemb * size));
+	return (r);
 }

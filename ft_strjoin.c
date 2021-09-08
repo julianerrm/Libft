@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 23:28:49 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/06 12:28:13 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 23:00:18 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*r;
 	int		i;
-	size_t	last_index;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -35,6 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		r[j + i] = s2[i];
 		i++;
 	}
-	s1[j + i] = '\0';
+	r[j + i] = '\0';
 	return (r);
 }

@@ -6,11 +6,10 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 23:22:47 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/01 23:57:46 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 22:55:00 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)

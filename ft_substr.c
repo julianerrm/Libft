@@ -6,12 +6,11 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 10:34:39 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/06 13:14:15 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/07 22:54:34 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
