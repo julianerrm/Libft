@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 17:02:57 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 12:41:02 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/08 00:03:44 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*r;
 	int		len;
 
-	len = ft_strlen(s) - 1;
+	len = ft_strlen(s);
 	while (s[len] != c && len >= 0)
 		len--;
 	if (len < 0)

@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 15:25:44 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/01 23:57:17 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/08 00:08:39 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (nptr[i] != '-')
 		signal = -1;
+	i = i + 1;
 	while (nptr[i] > 47 && nptr[i] < 58 && nptr[i] != '\0')
 	{
 		nb = nb * 10;

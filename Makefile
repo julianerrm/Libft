@@ -6,7 +6,7 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/09/07 23:17:20 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/07 23:44:23 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ ft_tolower.c \
 ft_strchr.c \
 ft_strrchr.c \
 ft_strncmp.c \
+ft_memcmp.c \
 ft_memchr.c \
 ft_strnstr.c \
 ft_atoi.c \
