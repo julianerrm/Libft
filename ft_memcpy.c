@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 11:22:06 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/07 23:56:25 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:40:01 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*s;
 
 	i = 0;
-	if ( !src || n == 0)
+	if (!src && !dest)
 		return (0);
 	d = (char *) dest;
 	s = (char *) src;

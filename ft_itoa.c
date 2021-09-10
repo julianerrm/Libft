@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 14:52:38 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/08 00:19:08 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/08 10:18:51 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*ft_minneg(void)
 {
 	char	*r;
 
-	r = (char *) malloc(10 * sizeof(char));
+	r = (char *) malloc(12 * sizeof(char));
 	r = "-2147483648";
 	return (r);
 }
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	int		n_temp;
 
 	if (n == -2147483648)
-		return (ft_minneg);
+		return (ft_minneg());
 	n_temp = n * (1 - ft_negative(n) * 2);
 	alg = ft_alg(n_temp);
 	r = (char *) malloc((ft_negative(n) + alg + 1) * sizeof(char));
