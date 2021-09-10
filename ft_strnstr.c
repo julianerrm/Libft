@@ -6,53 +6,30 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 00:04:56 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/02 23:17:22 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/10 13:42:57 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	check_whole_str(
-const char *str, const char *to_find, int *i, int *mem)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	j;
-
-	j = 0;
-	if (str[*i] == to_find[j])
-	{
-		*mem = *i;
-		while (str[*i] == to_find[j] && to_find[j] != '\0' )
-		{
-			*i = *i + 1;
-			j++;
-		}
-		if (to_find[j] == '\0')
-			*i = -2;
-		else
-			*i = *mem;
-	}
-}	
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
-{
-	int		i;
-	int		mem;
+	size_t		i;
+	size_t		mem;
 	char	*r;
 
 	i = 0;
-	r = (char *) &haystack[i];
-	if (needle[0] == '\0')
+	r = (char *) big;
+	if (little[0] == '\0')
 		return (r);
-	while (haystack[i] != '\0' && i >= 0 && i < (int) n)
+	while (big[i] != '\0' && len - i > ft_strlen(little) - 1)
 	{
-		check_whole_str(haystack, needle, &i, &mem);
-		i++;
+		mem = i;
+		while (big[i] == little [i - mem] && big[i] != '\0')
+			i++;
+		if (little[i - mem] == '\0')
+			return ((char *) &big[mem]);
+		i = mem + 1;
 	}
-	if (i < 0)
-	{
-		r = (char *) &haystack[mem];
-		return (r);
-	}
-	else
-		return (0);
+	return (0);
 }
