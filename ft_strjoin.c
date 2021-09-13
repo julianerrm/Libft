@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 23:28:49 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/07 23:00:18 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/11 11:39:19 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 
 	i = 0;
-	j = 0;
 	r = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!r)
+	if (!r || !s1 || !s2)
 		return (0);
 	while (s1[i] != '\0')
 	{

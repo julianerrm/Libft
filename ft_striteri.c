@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 17:38:44 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/07 23:09:42 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/11 11:34:38 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_striteri(char const *s, char (*f)(unsigned int, char*))
 	r = ft_strdup(s);
 	while (r[i])
 	{
-		r[i] = f(i, &r[i]);
+		r[i] = f(i, (char *) &s[i]);
 		i++;
 	}
 	return (r);
