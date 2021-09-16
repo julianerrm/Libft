@@ -6,7 +6,7 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/09/07 23:44:23 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/16 10:00:34 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,16 @@ OBJ = ${SRC:%.c=%.o}
 
 all: ${NAME}
 
-${NAME}:${OBJ}
+${NAME}: ${OBJ}
 	ar -crs ${NAME} ${OBJ}
 
-${OBJ}:
-	clang ${FLAGS} -c ${SRC}
+%.o: %.c
+	clang ${FLAGS} -c $<
 
 clean:
 	rm -f ${OBJ}
 
-fclean: 
+fclean: clean 
 	rm -f ${NAME}
 
 re: clean all

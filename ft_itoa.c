@@ -6,13 +6,13 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 14:52:38 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/13 11:46:21 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/15 16:50:48 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static int	ft_alg(int n)
+static int	ft_count_alg(int n)
 {
 	int	alg;
 
@@ -25,26 +25,17 @@ static int	ft_alg(int n)
 	return (alg);
 }
 
-static char	ft_algtchr(int n)
+static char	ft_algtochr(int n)
 {
 	if (n < 10)
 		return (n + 48);
 	else
-		return (ft_algtchr(n % 10));
+		return (ft_algtochr(n % 10));
 }
 
 static int	ft_negative(int n)
 {
 	return (n < 0);
-}
-
-static char	*ft_minneg(void)
-{
-	char	*r;
-
-	r = (char *) malloc(12 * sizeof(char));
-	r = "-2147483648";
-	return (r);
 }
 
 char	*ft_itoa(int n)
@@ -54,9 +45,9 @@ char	*ft_itoa(int n)
 	int		n_temp;
 
 	if (n == -2147483648)
-		return (ft_minneg());
+		return (ft_strdup("-2147483648"));
 	n_temp = n * (1 - ft_negative(n) * 2);
-	alg = ft_alg(n_temp);
+	alg = ft_count_alg(n_temp);
 	r = (char *) malloc((ft_negative(n) + alg + 1) * sizeof(char));
 	if (!r)
 		return (0);
@@ -66,7 +57,7 @@ char	*ft_itoa(int n)
 	n_temp = n * (1 - ft_negative(n) * 2);
 	while (alg > 0)
 	{
-		r[alg + ft_negative(n) - 1] = ft_algtchr(n_temp);
+		r[alg + ft_negative(n) - 1] = ft_algtochr(n_temp);
 		n_temp = n_temp / 10;
 		alg--;
 	}

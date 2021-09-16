@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 00:04:56 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/10 13:42:57 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:17:15 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t		i;
-	size_t		mem;
+	size_t	i;
+	size_t	mem;
 	char	*r;
 
 	i = 0;
