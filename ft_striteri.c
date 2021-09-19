@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 17:38:44 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/15 18:07:34 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/16 17:06:25 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char const *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (!s || !f)
-		return;
+		return ;
 	while (s[i])
 	{
 		f(i, (char *) &s[i]);

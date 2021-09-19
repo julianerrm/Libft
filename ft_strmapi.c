@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 00:08:48 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/15 00:09:40 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/16 18:15:40 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*r;
 	unsigned int	i;
 
+	if (!s || !f)
+		return (0);
 	i = 0;
 	r = ft_strdup(s);
-	if (!s || !f || !r)
+	if (!r)
 		return (0);
 	while (r[i] != '\0')
 	{

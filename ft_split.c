@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 11:34:00 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/16 09:34:02 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:00:36 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	ft_splitcounter(char const *s, char c)
 	i = 0;
 	count = 0;
 	temp = ft_strtrim(s, &c);
-	if (ft_strncmp(temp,"",1) == 0 || !temp)
+	if (ft_strncmp(temp, "", 1) == 0 || !temp)
 	{
-		// free(temp);
+		free(temp);
 		return (0);
 	}
 	while (i < ft_strlen(temp))
@@ -36,40 +36,43 @@ static int	ft_splitcounter(char const *s, char c)
 		}
 		i++;
 	}
+	free(temp);
 	return (count + 1);
+}
+
+static int	ft_len_split(char *s1, char *s2, char c, int len)
+{		
+	len = len + ft_strlen(s1);
+	while (*(s2 + len) == c)
+		len++;
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**r;
 	char	*int_s;
-	int		count;
+	int		i;
+	int		len;
 
 	if (!s)
 		return (0);
-	count = ft_splitcounter(s, c);
-	r = (char **) malloc((count + 1) * sizeof(char *));
+	r = (char **) malloc((ft_splitcounter(s, c) + 1) * sizeof(char *));
 	if (!r)
 		return (0);
-	r[count] = (void *) 0;	
-	if (count == 0)
+	r[ft_splitcounter(s, c)] = (void *) 0;
+	if (ft_splitcounter(s, c) == 0)
 		return (r);
-	count = count - 1;
-	int_s = (char *) s;
-	while (count > 0)
+	int_s = ft_strtrim(s, &c);
+	i = 0;
+	len = 0;
+	while (i < ft_splitcounter(s, c) - 1)
 	{
-		int_s = ft_strtrim(int_s, &c);
-		r[count] = ft_strtrim(ft_strrchr(int_s, c), &c);
-		int_s = ft_substr(int_s, 0, ft_strlen(int_s) - ft_strlen(r[count]) - 1);
-		count --;
-	}	
-	r[count] = ft_strtrim(int_s, &c);
+		r[i] = ft_substr(int_s, len, ft_strchr(int_s + len, c) - (int_s + len));
+		len = ft_len_split(r[i], int_s, c, len);
+		i++;
+	}
+	r[i] = ft_substr(int_s, len, ft_strlen(int_s + len));
+	free(int_s);
 	return (r);
 }
-
-// #include <stdio.h>
-// int main (void)
-// {
-// 	printf("%s", ft_split("fdghjk", ' ')[0]);
-// 	printf("%s", ft_split("fdghjk", ' ')[1]);
-// }

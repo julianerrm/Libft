@@ -6,12 +6,14 @@
 #    By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 20:54:10 by julrodri          #+#    #+#              #
-#    Updated: 2021/09/16 10:00:34 by julrodri         ###   ########.fr        #
+#    Updated: 2021/09/18 17:01:09 by julrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
 FLAGS = -Wall -Werror -Wextra
+
 SRC = ft_isalpha.c \
 ft_isdigit.c \
 ft_isalnum.c \
@@ -49,25 +51,35 @@ ft_putnbr_fd.c
 
 OBJ = ${SRC:%.c=%.o} 
 
+SRC_BONUS = ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c
+
+OBJ_BONUS = ${SRC_BONUS:%.c=%.o} 
+
 all: ${NAME}
 
-${NAME}: ${OBJ}
+${NAME}: ${OBJ} 
 	ar -crs ${NAME} ${OBJ}
 
 %.o: %.c
 	clang ${FLAGS} -c $<
 
+bonus: ${OBJ_BONUS} 
+	ar -crs ${NAME} ${OBJ_BONUS}
+	
 clean:
-	rm -f ${OBJ}
+	rm -f ${OBJ} ${OBJ_BONUS}
 
 fclean: clean 
 	rm -f ${NAME}
 
 re: clean all
 
-so:
-	clang -nostartfiles -fPIC $(FLAGS) $(SRC)
-	clang -nostartfiles -shared -o libft.so $(OBJ)
-
-# $(NAME), all, clean, fclean and
-# re.
+.PHONY: all clean fclean re

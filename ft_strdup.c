@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 23:22:47 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/15 19:23:04 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/16 17:57:15 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s)
 	char	*r;
 	size_t	i;
 
-	if (!s)
-		return (0);
 	r = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!r)
 		return (0);
