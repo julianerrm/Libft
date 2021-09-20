@@ -6,7 +6,7 @@
 /*   By: julrodri <julrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 11:57:51 by julrodri          #+#    #+#             */
-/*   Updated: 2021/09/18 13:53:01 by julrodri         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:55:18 by julrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
+	t_list	*next;
 
 	if (!*lst)
 		return ;
@@ -22,8 +23,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (temp->next)
 	{
 		del(temp->content);
+		next = temp->next;
 		free(temp);
-		temp = temp->next;
+		temp = next;
 	}
 	del(temp->content);
 	free(temp);
